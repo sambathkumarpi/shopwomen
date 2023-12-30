@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shopwomen.ShopController">
+   <children>
+      <VBox layoutX="27.0" layoutY="128.0" prefHeight="200.0" prefWidth="78.0" spacing="15.0">
+         <children>
+            <Label text="ID">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="Name">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="Size">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="Price">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="Qty">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="157.0" text="Category">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="128.0" layoutY="128.0" prefHeight="200.0" prefWidth="214.0" spacing="10.0">
+         <children>
+            <TextField fx:id="tfid" />
+            <TextField fx:id="tfname" />
+            <TextField fx:id="tfsize" />
+            <TextField fx:id="tfprice" />
+            <TextField fx:id="tfqty" />
+            <ComboBox fx:id="comCategory" onAction="#addproductCategorylist" prefHeight="26.0" prefWidth="216.0" />
+         </children>
+      </VBox>
+      <TableView fx:id="tvproduct" layoutX="345.0" layoutY="127.0" prefHeight="450.0" prefWidth="454.0">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="30.4000244140625" text="Id" />
+            <TableColumn fx:id="colName" prefWidth="196.79998779296875" text="Name" />
+          <TableColumn fx:id="colSize" prefWidth="68.0" text="Size" />
+            <TableColumn fx:id="colPrice" minWidth="0.0" prefWidth="72.79998779296875" text="Price" />
+            <TableColumn fx:id="colQty" prefWidth="83.2000732421875" text="Qty" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnupdate" layoutX="200.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="70.0" text="Update" />
+      <Button fx:id="btninsert" layoutX="128.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="70.0" text="Insert" />
+      <Button fx:id="btndelete" layoutX="271.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="70.0" text="Delete" />
+      <Button fx:id="btnsell" layoutX="125.0" layoutY="456.0" mnemonicParsing="false" onAction="#sell" prefHeight="27.0" prefWidth="214.0" text="SELL">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <TextField fx:id="tfprodId" layoutX="125.0" layoutY="425.0" prefHeight="26.0" prefWidth="100.0" promptText="ID" />
+      <TextField fx:id="tfprodQty" layoutX="239.0" layoutY="425.0" prefHeight="26.0" prefWidth="100.0" promptText="Qty" />
+      <Label layoutX="27.0" layoutY="430.0" text="Choose to Sell">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="347.0" layoutY="62.0" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: a0a0a0;">
+         <children>
+            <Label layoutX="5.0" layoutY="3.0" prefHeight="18.0" prefWidth="40.0" text="Capital" textFill="WHITE" />
+            <Label fx:id="lbCaptial" layoutX="10.0" layoutY="18.0" prefHeight="28.0" prefWidth="78.0" text="0.00" textFill="#2848ff">
+               <font>
+                  <Font name="Agency FB" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="495.0" layoutY="62.0" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: a0a0a0;">
+         <children>
+            <Label layoutX="2.0" layoutY="1.0" prefHeight="18.0" prefWidth="40.0" text="Cost" textFill="WHITE" />
+            <Label fx:id="lbCost" layoutX="11.0" layoutY="16.0" prefHeight="28.0" prefWidth="78.0" text="0.00" textFill="#ffc247">
+               <font>
+                  <Font name="Agency FB" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="646.0" layoutY="62.0" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: a0a0a0;">
+         <children>
+            <Label layoutX="2.0" layoutY="1.0" prefHeight="18.0" prefWidth="40.0" text="Income" textFill="WHITE" />
+            <Label fx:id="lbIncome" layoutX="14.0" layoutY="18.0" prefHeight="28.0" prefWidth="78.0" text="0.00" textFill="#0cff0c">
+               <font>
+                  <Font name="Agency FB" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="13.0" layoutY="6.0" text="Wellcome to Women Shop">
+         <font>
+            <Font name="Brush Script MT Italic" size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="38.0" text="Sambathkumar Palani">
+         <font>
+            <Font name="Arial Narrow" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="133.0" layoutY="38.0" text="Shree Varshan Murali">
+         <font>
+            <Font name="Arial Narrow" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="521.0" text="Purchase">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfpurchId" layoutX="125.0" layoutY="520.0" prefHeight="26.0" prefWidth="60.0" promptText="ID" />
+      <TextField fx:id="tfpurchQty" layoutX="191.0" layoutY="520.0" prefHeight="26.0" prefWidth="70.0" promptText="Qty" />
+      <TextField fx:id="tfpurchPrice" layoutX="268.0" layoutY="520.0" prefHeight="26.0" prefWidth="70.0" promptText="Price" />
+      <Button fx:id="btnPurchase" layoutX="125.0" layoutY="550.0" mnemonicParsing="false" onAction="#purchase" prefHeight="27.0" prefWidth="214.0" text="Purchase">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <RadioButton fx:id="radDiscount" layoutX="242.0" layoutY="397.0" mnemonicParsing="false" text="\% Discount" />
+      <Button fx:id="btnShoes" layoutX="199.0" layoutY="94.0" mnemonicParsing="false" onAction="#btnShowshoesClicked" prefHeight="26.0" prefWidth="70.0" text="Shoes" />
+      <Button fx:id="btnDress" layoutX="127.0" layoutY="94.0" mnemonicParsing="false" onAction="#btnShowDressClicked" prefHeight="26.0" prefWidth="70.0" text="Dress" />
+      <Button fx:id="btnAccess" layoutX="270.0" layoutY="94.0" mnemonicParsing="false" onAction="#btnShowAccesseryClicked" prefHeight="26.0" prefWidth="70.0" text="Access" />
+      <Label layoutX="27.0" layoutY="54.0" text="ESILV - JavaFX | Nada NAHLE" />
+      <Label layoutX="126.0" layoutY="383.0" text="30% 20% 50% Discount on Dress, Shoes &amp; Access">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <Label layoutX="119.0" layoutY="397.0" />
+      
+   </children>
+</AnchorPane>
